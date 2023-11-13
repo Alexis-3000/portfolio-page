@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #651FFF;
+    --secondary-color: #00BCD4;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.ani1 {
+    width: 150px;
+    height: 150px;
+    border: 10px solid var(--secondary-color);
+    border-top: 10px solid var(--primary-color);
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.ani2 {
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    animation-name: wiggle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* pacman animation */
+.ani3 {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+}
+.pacman {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+}
+.pacman::before, .pacman::after {
+    position: absolute;
+    top: -75px;
+    display: block;
+    border-radius: 50%;
+    content: "";
+    height: 0px;
+    width: 0px;
+}
+.pacman::before {
+    animation: chunk-top 0.5s ease infinite;
+    border: 75px solid var(--secondary-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+.pacman::after {
+    animation: chunk-bottom 0.5s ease infinite;
+    border: 75px solid var(--secondary-color);
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+/* my own pacman */
+.ani4 {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+}
+.lotus {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+}
+.lotus::before, .lotus::after {
+    position: absolute;
+    top: -75px;
+    display: block;
+    border-radius: 50%;
+    content: "";
+    height: 0px;
+    width: 0px;
+}
+.lotus::before {
+    animation: lotus-chunk-top 2s ease infinite;
+    border: 75px solid var(--primary-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+.lotus::after {
+    animation: lotus-chunk-bottom 2s ease infinite;
+    border: 75px solid var(--primary-color);
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+.ani5{
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    animation-name: morph;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.ani6{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    animation-name: flip;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.ani7 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Orbit */
+.ani8 {
+    width: 150px;
+    height: 150px;
+    border: 1px solid blue;
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    top: 15px;
+    left: 15px;
+}
+
+.orbit {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid var(--secondary-color);
+    top: 0;
+    left: 0;
+    animation: spin-right 10s linear infinite;
+}
+
+.moon {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    top: -10px;
+    left: 65px;
+}
+
+
+.ani9 {
+    border: 1px solid #651FFF;
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.ani9 div:nth-of-type(1) {
+    width: 75px;
+    height: 75px;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ani9 div:nth-of-type(2) {
+    width: 75px;
+    height: 75px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.ani9 div:nth-of-type(3) {
+    width: 75px;
+    height: 75px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.ani9 div:nth-of-type(4) {
+    width: 75px;
+    height: 75px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* swing */
+.ani10 {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+}
+.swing {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+}
+.swing::before {
+    position: absolute;
+    top: -75px;
+    display: block;
+    border-radius: 50%;
+    content: "";
+    height: 0px;
+    width: 0px;
+    animation: swing 4s ease infinite;
+    border: 75px solid var(--primary-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+
+
+/* 
+#651FFF
+#E91E63
+#FDD835
+#00E676
+ */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+
+/* pacman */
+@keyframes chunk-top {
+    0%,
+    100% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(-80deg);
+    }
+}
+@keyframes chunk-bottom {
+    0%,
+    100% {
+        transform: rotate(-40deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+/* lotus */
+@keyframes lotus-chunk-top {
+    0%,
+    100% {
+        transform: rotate(-135deg);
+    }
+    50% {
+        transform: rotate(-225deg);
+    }
+}
+@keyframes lotus-chunk-bottom {
+    0%,
+    100% {
+        transform: rotate(-135deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes morph {
+    0%,
+    100% {
+
+    } 50% {
+        border-radius: 50%;
+    }
+}
+
+@keyframes flip {
+    0%,
+    100% {
+
+    } 50% {
+        background-color: var(--secondary-color);
+        transform: /* translate(-200px, 200px) */ rotate3d(-1, 1, 0, 180deg);
+    }
+}
+
+@keyframes bounce {
+    0%,
+  100% {
+    transform: scale(1.5, 0.5);
+  }
+  20% {
+    transform: scaleY(1.2);
+  }
+  40%,
+  80% {
+    transform: translateY(-14rem);
+  }
+  70% {
+    transform: translateY(-15rem);
+  }
+  90% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-right {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes swing {
+    0%,
+    100% { 
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+}
+

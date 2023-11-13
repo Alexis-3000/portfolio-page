@@ -1,0 +1,28 @@
+To Do Portfolio Page
+
+- build page structure –> ok!
+– improve text -> in language class?
+   - translate names of talks
+- styling, typography
+    - choose new font?
+    - margins about page mobile version
+- research animations
+- build animations -> finish / improve
+- contact form -> stylen! für mobile
+
+- read me file!
+deployed link should be included
+
+
+
+Questions:
+– where to put margins / padding –> good practice
+– sidescroll problem
+– position main start page -> solved!
+
+
+
+presentation: 5-7 minutes, explaine like it's your parents listening
++ questions / technical
+
+
