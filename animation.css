@@ -146,10 +146,8 @@ main {
 .ani8 {
     width: 150px;
     height: 150px;
-    border: 1px solid blue;
     position: relative;
 }
-
 .circle {
     position: absolute;
     height: 120px;
@@ -159,18 +157,15 @@ main {
     top: 15px;
     left: 15px;
 }
-
 .orbit {
     position: absolute;
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    border: 1px solid var(--secondary-color);
     top: 0;
     left: 0;
-    animation: spin-right 10s linear infinite;
+    animation: spin-right 8s linear infinite;
 }
-
 .moon {
     position: absolute;
     height: 20px;

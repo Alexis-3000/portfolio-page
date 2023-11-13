@@ -13,6 +13,8 @@
 
 :root {
     font-size: 62.5%;
+    --primary-color: #651FFF;
+    --secondary-color: #00BCD4;
 }
 
 body {
@@ -51,9 +53,215 @@ header {
 /* Home Page: Anmiation ------------ */
 
 .animation-container {
-    /* border: 1px solid #651FFF; */
     height: 100%;
     margin-top: -21px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 12rem 10rem;
+}
+
+/* Morph */
+.ani1{
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    animation-name: morph;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Spinner */
+.ani2 {
+    width: 150px;
+    height: 150px;
+    border: 10px solid var(--secondary-color);
+    border-top: 10px solid var(--primary-color);
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Wiggle */
+.ani3 {
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    animation-name: wiggle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Lotus */
+.ani4 {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+}
+.lotus {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+}
+.lotus::before, .lotus::after {
+    position: absolute;
+    top: -75px;
+    display: block;
+    border-radius: 50%;
+    content: "";
+    height: 0px;
+    width: 0px;
+}
+.lotus::before {
+    animation: lotus-chunk-top 2s ease infinite;
+    border: 75px solid var(--secondary-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+.lotus::after {
+    animation: lotus-chunk-bottom 2s ease infinite;
+    border: 75px solid var(--secondary-color);
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+/* Flip */
+.ani5{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    animation-name: flip;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Bounce */
+.ani6 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Orbit */
+.ani7 {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+.circle {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    top: 15px;
+    left: 15px;
+}
+.orbit {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    animation: spin-right 8s linear infinite;
+}
+.moon {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    top: -10px;
+    left: 65px;
+}
+
+/* Squares */
+.ani8 {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+.ani8 div:nth-of-type(1) {
+    width: 75px;
+    height: 75px;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: squares1 2s infinite;
+}
+.ani8 div:nth-of-type(2) {
+    width: 75px;
+    height: 75px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: squares2 2s infinite;
+}
+.ani8 div:nth-of-type(3) {
+    width: 75px;
+    height: 75px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: squares3 2s infinite;
+}
+.ani8 div:nth-of-type(4) {
+    width: 75px;
+    height: 75px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: squares4 2s infinite;
+}
+
+/* Swing */
+.ani9 {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+}
+.swing {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+}
+.swing::before {
+    position: absolute;
+    top: -75px;
+    display: block;
+    border-radius: 50%;
+    content: "";
+    height: 0px;
+    width: 0px;
+    animation: swing 4s ease infinite;
+    border: 75px solid var(--primary-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+
+/* Calm Animation Page ---------- */
+
+.calm-animation-container {
+    height: 100%;
+    margin-top: -45px; /* ??? worked finde with -21px */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,9 +275,6 @@ header {
     animation-name: animateCircle;
     animation-duration: 10s;
     animation-iteration-count: infinite;
-    /* accident */
-    /* border: 5px solid #00BCD4;
-    border-top: 5px solid #651FFF; */
 }
 
 /* About Page ------------------- */
@@ -115,7 +320,8 @@ section h2 {
 footer {
     display: flex;
     flex-wrap: wrap;
-    margin: 1.5rem 0;
+    margin-top: 3rem;
+    padding: 3rem;
 }
 
 footer p {
@@ -149,6 +355,8 @@ button {
     border-radius: 2rem;
 }
 
+/* Media Queries ---------------- */
+
 @media (min-width: 768px) {
     body {
         padding: 0 5.5rem 2rem 5.5rem;
@@ -166,7 +374,149 @@ button {
     }
 }
 
-/* Animation ------------------ */ /* ! place after everything? */
+
+
+/* Animations Front Page ------------ */
+
+/* Morph */
+@keyframes morph {
+    0%,
+    100% {
+
+    } 50% {
+        border-radius: 50%;
+        background-color: var(--secondary-color);
+    }
+}
+
+/* Spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Wiggle */
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+}
+
+/* lotus */
+@keyframes lotus-chunk-top {
+    0%,
+    100% {
+        transform: rotate(-135deg);
+    }
+    50% {
+        transform: rotate(-225deg);
+    }
+}
+@keyframes lotus-chunk-bottom {
+    0%,
+    100% {
+        transform: rotate(-135deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+}
+
+/* Flip */
+@keyframes flip {
+    0%,
+    100% {
+
+    } 50% {
+        background-color: var(--secondary-color);
+        transform: /* translate(-200px, 200px) */ rotate3d(-1, 1, 0, 180deg);
+    }
+}
+ /* Bounce */
+@keyframes bounce {
+    0%,
+  100% {
+    transform: scale(1.2, 0.5);
+  }
+  20% {
+    transform: scaleY(1.2);
+  }
+  40%,
+  80% {
+    transform: translateY(-10rem);
+  }
+  70% {
+    transform: translateY(-11rem);
+  }
+  90% {
+    transform: translateY(0);
+  }
+}
+
+/* Orbit */
+@keyframes spin-right {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Squares */
+@keyframes squares1 {
+    50% {
+        transform: /* translateX(-20px) */ rotate(90deg);
+    }
+}
+@keyframes squares2 {
+    50% {
+        transform: /* translateX(20px) */ rotate(-90deg);
+    }
+}
+@keyframes squares3 {
+    50% {
+        transform: /* translateX(-20px) */ rotate(-90deg);
+    }
+}
+@keyframes squares4 {
+    50% {
+        transform: /* translateX(20px) */ rotate(90deg);
+    }
+}
+
+/* Swing */
+@keyframes swing {
+    0%,
+    100% { 
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Calm Animation ------------------ */
 
 @keyframes animateCircle { 
     20% {
