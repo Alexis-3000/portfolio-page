@@ -2,7 +2,7 @@
 A portfolio page for Studio Pommerenke
 
 ## Description
-This digital businesscard was build using HTML and CSS. The Front page displays a number of animations built only with CSS.
+This digital businesscard was build using HTML and CSS. The front page displays a number of animations built with CSS only.
 
 ## Author
 Alexis Pommerenke
