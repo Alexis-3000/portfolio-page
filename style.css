@@ -39,8 +39,12 @@ header {
     position: sticky; 
     top: 0;
     z-index: 1;
-    background-color: #fff;
     padding: 1.5rem 0;
+}
+
+.header-about {
+    background-color: #fff;
+    
     box-shadow: 0px 10px 15px #fff;
 }
 
@@ -278,6 +282,7 @@ header {
 }
 
 /* About Page ------------------- */
+/* ! Make sections collapsible with JavaScript for Mobile Version! */
 
 .about-container {
     margin-top: 10rem;
